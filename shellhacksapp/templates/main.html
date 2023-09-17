@@ -1,0 +1,42 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="main.css">
+
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/google_data/">Companies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/comparison/">Comparison Chart</a>
+              </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+          
+  </nav>
+
+
+<div class="card" style="width: 900px; margin-right: auto; margin-left: auto; margin-top: 30px;">
+    <img src="{% static 'img/building.jpeg' %}" class="card-img-top" style="height: 400px;">
+    <div class="card-body">
+      <h5 class="card-title">S&P 500</h5>
+      <p class="card-text">S&P is an index fund that has 500 companies consisting of 503 stocks. Explore the market summary of each companys' stock and compare them with each other!</p>
+      <a href="google_data" class="btn btn-primary">Get started</a>
+    </div>
+  </div>

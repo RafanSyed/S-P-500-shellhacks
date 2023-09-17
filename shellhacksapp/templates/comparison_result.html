@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Comparison</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/google_data/">Companies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comparison/">Comparison Chart</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item active" style="background-color: #e3f2fd; color: black;"><span>{{ stock_info_1.company_name }}</span></li>
+                    <li class="list-group-item">Total Price: ${{ stock_info_1.total_price|floatformat:"2" }}</li>
+                    <li class="list-group-item">52-Week High: ${{ stock_info_1.week_high|floatformat:"2" }}</li>
+                    <li class="list-group-item">52-Week Low: ${{ stock_info_1.week_low|floatformat:"2" }}</li>
+                    <li class="list-group-item">Profit Margin: {{ stock_info_1.profit_margin|floatformat:"2" }}%</li>
+                    <li class="list-group-item">Average Volume: {{ stock_info_1.average_volume|floatformat:"2" }} shares</li>
+                    <li class="list-group-item">Price to Earnings Ratio: {{ stock_info_1.pe_ratio|floatformat:"2" }}</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item active" style="background-color: #e3f2fd; color: black;"><span>{{ stock_info_2.company_name }}</span></li>
+                    <li class="list-group-item">Total Price: ${{ stock_info_2.total_price|floatformat:"2" }}</li>
+                    <li class="list-group-item">52-Week High: ${{ stock_info_2.week_high|floatformat:"2" }}</li>
+                    <li class="list-group-item">52-Week Low: ${{ stock_info_2.week_low|floatformat:"2" }}</li>
+                    <li class="list-group-item">Profit Margin: {{ stock_info_2.profit_margin|floatformat:"2" }}%</li>
+                    <li class="list-group-item">Average Volume: {{ stock_info_2.average_volume|floatformat:"2" }} shares</li>
+                    <li class="list-group-item">Price to Earnings Ratio: {{ stock_info_2.pe_ratio|floatformat:"2" }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

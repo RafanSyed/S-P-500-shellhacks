@@ -1,0 +1,72 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<!DOCTYPE html>
+<html>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/comparison/">Comparison Chart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" >Companies</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Login</a>
+                </li>
+              </ul>
+              
+      </nav>
+<head>
+    <title>Company Data</title>
+</head>
+<body>
+    <form class="d-flex" style = "margin-left: 125px; width: 500px; margin-top: 30px;">
+        <input class="form-control me-2" type="search" placeholder="Search Company" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+    <style>
+        
+        .centered-list {
+            width: 80%; 
+            margin: 0 auto; 
+            margin-top: 20px;
+        }
+        
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }          
+    </style>
+
+
+      
+    {% for name, data in company_data.items %}
+    <ul class="list-group centered-list">
+        <li class="list-group-item active">{{ name }}</li>
+        <li class="list-group-item"><span>52-Week High:</span> <span>${{ data.fiftyTwoWeekHigh|floatformat:2 }}</span></li>
+        <li class="list-group-item"><span>52-Week Low:</span> <span>${{ data.fiftyTwoWeekLow|floatformat:2 }}</span></li>
+        <li class="list-group-item"><span>Profit Margin:</span> <span>{{ data.profitMargins|floatformat:2 }}%</span></li>
+        <li class="list-group-item"><span>Average Volume:</span> <span>{{ data.averageVolume|floatformat:2 }} shares</span></li>
+        <li class="list-group-item"><span>Volume:</span> <span>{{ data.regularMarketVolume|floatformat:2 }} shares</span></li>
+        <li class="list-group-item"><span>Price-to-Earnings Ratio:</span> <span>{{ data.trailingPE|floatformat:2 }}</span></li>
+    </ul>
+    
+    
+    {% endfor %}
+
+
